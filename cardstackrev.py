@@ -7,7 +7,7 @@ import PIL
 from PIL import Image
 
 # Stacked image composite
-OUT_FOLDER = os.path.join(".", "out-stack")
+OUT_FOLDER = os.path.join(".", "out-stack-rev")
 with open("./config.json") as f:
     config = json.load(f)
 SC_FOLDER = os.path.join(*config['sc_folder']['paths'])
@@ -22,6 +22,7 @@ for root, dirs, files in os.walk(SC_FOLDER):
             if os.path.isfile(os.path.join(folder, f))]
         file_paths = [
             os.path.join(folder, f) for f in files]
+        file_paths.reverse()
 
         image = None
         for i, file_path in enumerate(file_paths):
