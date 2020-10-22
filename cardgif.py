@@ -37,5 +37,5 @@ for root, dirs, files in os.walk(SC_FOLDER):
         if images:
             image = images[0]
             image.save(
-                out_file, save_all=True, append_images=images[1:], duration=10)
+                out_file, save_all=True, append_images=images[1:], duration=4, loop=0)
             print(out_file)
